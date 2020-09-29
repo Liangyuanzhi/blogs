@@ -13,6 +13,25 @@ a {
 	cursor: pointer;
 	text-decoration: none;
 }
+#mobile-bar .menu-button {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  left: 12px;
+  background: url("../images/menu.png") center center no-repeat;
+  background-size: 24px;
+}
+#mobile-bar .logo {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url("../images/logo.png") center center no-repeat;
+  top: 5px;
+  left: 50%;
+  margin-left: -15px;
+  background-size: 30px;
+}
 @font-face {
   font-family: "Source Sans Pro";
   src: local("Source Sans Pro"), url("/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf");
