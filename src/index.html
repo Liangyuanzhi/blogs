@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Blog</title>
+		<title>Vue中的Keep-Alive组件</title>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/index123.css">
 		<link rel="stylesheet" href="./css/pages45451155.css">
@@ -75,7 +75,14 @@
 				<div class="sidebar-inner">
 					<div class="list">
 						<ul class="menu-root">
-							<li><a href="#">Vue中的Keep-Alive组件</a></li>
+							<li><a href="#" class="sidebar-link">Vue中的Keep-Alive组件</a></li>
+							<li>
+							  <a href="async-computed.html" class="sidebar-link">异步计算属性</a>
+							  <ul class="menu-sub">
+							    <li><a href="#安装" class="sidebar-link">安装</a></li>
+							    <li><a href="#使用" class="sidebar-link">使用</a></li>
+							  </ul>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -94,9 +101,9 @@
 
 				<h3>keep-alive用法</h3>
 				<p>是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。它使用的时候非常简单，示例代码如下：</p>
-<pre><code class="hljs html"><span class="hljs-tag"> 
-&lt;<span class="hljs-name">keep-alive</span> 
-<span class="hljs-attr">:include</span>=<span class="hljs-string">"['componentsA,componentsB'] || 'a,b' || new Reg()"</span> 
+<pre><code class="hljs html"><span class="hljs-tag">
+&lt;<span class="hljs-name">keep-alive</span>
+<span class="hljs-attr">:include</span>=<span class="hljs-string">"['componentsA,componentsB'] || 'a,b' || new Reg()"</span>
 <span class="hljs-attr">:enclude</span>=<span class="hljs-string">"['componentsA,componentsB'] || 'a,b' || new Reg()"</span>&gt;
   <span class="hljs-comment">// 可以是任何组件</span>
 &nbsp;&nbsp;&lt;<span class="hljs-name">router-view /</span>&gt;
@@ -109,7 +116,7 @@
 &lt;<span class="hljs-name">template</span>&gt;
 &nbsp;&nbsp;&lt;<span class="hljs-name">input </span><span class="hljs-attr">type</span>=<span class="hljs-string">"input"</span> /&gt;
 &lt;<span class="hljs-name">/template</span>&gt;
-</span><span class="hljs-tag"> 
+</span><span class="hljs-tag">
 &lt;<span class="hljs-name">script</span>&gt;
 <span class="hljs-keyword">export default </span><span>{</span>
  <span>name:</span> "componentsA" ,
