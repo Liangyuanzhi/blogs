@@ -3,7 +3,22 @@ body,
 #app {
 	height: 100%;
 }
-
+.display-inline {
+	display: inline;
+}
+.color-42B983 {
+	color: #42B983;
+}
+.margin-left-20 {
+	margin-left: 20px;
+}
+.font-size-14 {
+	 font-size: 14px;
+	 color: #666;
+ }
+.list-group-item {
+	margin-bottom: 10px;
+}
 li {
 	list-style: none;
 }
@@ -257,7 +272,7 @@ body {
   margin: 0;
 }
 body.docs {
-  padding-top: 61px;
+  padding-top: 41px;
 }
 @media screen and (max-width: 900px) {
   body.docs {
@@ -498,7 +513,7 @@ i.rotating-clockwise {
 #header {
   background-color: #fff;
   height: 40px;
-  padding: 10px 60px;
+  padding: 0 60px;
   position: relative;
   z-index: 20;
 }
@@ -517,8 +532,8 @@ body.docs #nav {
   position: absolute;
   right: 30px;
   top: 10px;
-  height: 40px;
-  line-height: 40px;
+  /* height: 40px;
+  line-height: 40px; */
 }
 #nav .break {
   display: none;
@@ -622,8 +637,9 @@ body.docs #nav {
 	border-radius: 50%;
   vertical-align: middle;
   margin-right: 6px;
-  width: 40px;
-  height: 40px;
+	margin-bottom: 5px;
+  width: 30px;
+  height: 30px;
 }
 #mobile-bar {
   position: fixed;
@@ -961,7 +977,7 @@ ul.demo li {
 .sidebar {
   position: absolute;
   z-index: 10;
-  top: 61px;
+  top: 41px;
   left: 0;
   bottom: 0;
   overflow-x: hidden;
