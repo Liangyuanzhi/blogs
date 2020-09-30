@@ -1,15 +1,14 @@
 (function () {
-  // initHashLevelRedirects()
+  initHashLevelRedirects()
   initMobileMenu()
-  // initVideoModal()
+  initVideoModal()
   initNewNavLinks()
-  initSubMenu()
-  // if (PAGE_TYPE) {
-  //   initVersionSelect()
-  //   initApiSpecLinks()
-  //   initSubHeaders()
-  //   initLocationHashFuzzyMatching()
-  // }
+  if (PAGE_TYPE) {
+    initVersionSelect()
+    initApiSpecLinks()
+    initSubHeaders()
+    initLocationHashFuzzyMatching()
+  }
 
   // Most redirects should be specified in Hexo's
   // _config.yml. However, it can't handle hash-level
@@ -20,18 +19,6 @@
   // For these cases where a section on one page has
   // moved to a perhaps differently-named section on
   // another page, we need this.
-
-  function initSubMenu() {
-    // $('.menu-sub').each(function () {
-    //   $(this).hide()
-    // })
-
-    $('.menu-root > li > a').each(function () {
-      $(this).click(function () {
-        $(this).parent().siblings().find('.menu-sub').hide(200)
-      })
-    })
-  }
 
   function initHashLevelRedirects() {
     checkForHashRedirect(/list\.html$/, {
@@ -335,7 +322,7 @@
 
       var animating = false
       sectionContainer.addEventListener('click', function (e) {
-
+console.log(e)
         // Not prevent hashchange for smooth-scroll
         // e.preventDefault()
 
