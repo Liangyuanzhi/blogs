@@ -87,30 +87,208 @@
               <li>
                 <a href="async-computed.html" class="sidebar-link current">异步计算属性</a>
               </li>
+              <li>
+                <a href="display-flex.html" class="sidebar-link">Css布局</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单1</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单2</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单3</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单4</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单5</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单6</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单7</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单8</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单9</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单10</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单11</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单12</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单13</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单14</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单15</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单16</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单17</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单18</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单19</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单20</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单21</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单22</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单23</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单24</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单25</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单26</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单27</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单28</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单29</a>
+              </li>
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单30</a>
+              </li>
+              
+              <li>
+                <a href="javascript:;" class="sidebar-link">菜单31</a>
+              </li><li>
+                <a href="javascript:;" class="sidebar-link">菜单32</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="content guide with-sidebar computed-guide">
+        <h2 id="异步计算属性和计算属性的区别">异步计算属性和计算属性的区别</h2>
+        <p>不使用这个插件(AsyncComputed)，你不能使用vue.js提供的计算属性computed这么获取数据</p>
+<pre><code class="hljs js"><span class="hljs-tag"><span class="hljs-keyword">new Vue</span></span> ({
+<span class="hljs-tag">computed:</span> {
+  <span class="hljs-built_in">async </span><span class="hljs-keyword">username</span> () {
+    <span class="hljs-built_in">const </span>res = <span class="hljs-built_in">await</span><span class="hljs-keyword"> axios.get</span>('/get-username-by-id/' + this.<span class="hljs-tag">userid</span>)
+    <span class="hljs-keyword">return</span> res
+  }
+ }
+)}
+</code></pre>
+        <p>或者更确切地说，你可以，但它不会做你想让它做的事。但是使用这个插件，它就像你期望的那样工作</p>
+<pre><code class="hljs js"><span class="hljs-tag"><span class="hljs-keyword">new Vue</span></span> ({
+<span class="hljs-tag">asyncComputed:</span> {
+  <span class="hljs-built_in">async </span><span class="hljs-keyword">someCalculation</span> () {
+    <span class="hljs-built_in">const </span>x = <span class="hljs-built_in">await</span> <span class="hljs-keyword">someAsycFunction()</span>
+    <span class="hljs-built_in">const </span>y = <span class="hljs-built_in">await</span> <span class="hljs-keyword">anotherAsyncFunction()</span>
+    <span class="hljs-keyword">return</span> x + y
+  }
+ }
+)}
+</code></pre>
+
         <h2 id="安装">安装</h2>
-        <p>在我们用Vue.js做移动端开发的时候，经常会遇到这样的应用场景：</p>
-        <p>首先，让用户看到新闻列表；然后点击新闻标题，切换到新闻详情的组件，以展示新闻详情。</p>
-        <p>很多应用场景都于此类似，比如先进入商品列表，点击某一个商品条目，则切换到商品详情的组件。</p>
-        <p>这种场景往往会碰到一个问题，当我每一次从详情组件退回到列表组件的时候，列表组件会重新发出ajax请求。考虑到下面2条原因，总觉得这么不好。</p>
-        <p class="font-size-14">1.列表组件上的数据不会在短短几分钟之内就更新，完全没必要每次都发出ajax请求。这样势必降低用户体验</p>
-        <p class="font-size-14">2.浪费移动设备的流量。（如果流量无限，这条可以无视）</p>
-        <p>总之，即使只有第1条原因，我们也应该不让它每次退回到列表页的时候都重新发出ajax请求。如何解决这个问题？</p>
-        <p class="color-42B983">试试Vue.js自带的keep-alive?</p>
+        <p>npm</p>
+<pre><code>npm install --save vue-async-computed</code></pre>
+        <p>或者，你可以直接从一个CDN链接它:</p>
+<pre><code class="hljs js">
+<span class="hljs-comment">// 它总是指向最新版本的vue-async-computed。</span>
+<span class="hljs-tag">&lt;script</span><span class="hljs-attr"> src</span>=<span class="hljs-string">"https://unpkg.com/vue-async-computed'</span><span class="hljs-tag">&gt; &lt;/script&gt;</span>
+<span class="hljs-comment">// 你可能想把它钉在一个特定的版本上。</span>
+<span class="hljs-tag">&lt;script</span><span class="hljs-attr"> src</span>=<span class="hljs-string">"https://unpkg.com/vue-async-computed@3.9.0</span><span class="hljs-tag">&gt; &lt;/script&gt;</span></code></pre>
+        <p>当使用一个模块系统，如webpack或browserify，你需要显式安装通过Vue.use()</p>
+<pre><code class="hlj js"><span class="hljs-keyword">import Vue from</span>'vue'
+<span class="hljs-keyword">import AsyncComputed from </span>'vue-async-computed'
+Vue.use(AsyncComputed)
+</code></pre>
         <h2 id="使用">使用</h2>
-        <p>在我们用Vue.js做移动端开发的时候，经常会遇到这样的应用场景：</p>
-        <p>首先，让用户看到新闻列表；然后点击新闻标题，切换到新闻详情的组件，以展示新闻详情。</p>
-        <p>很多应用场景都于此类似，比如先进入商品列表，点击某一个商品条目，则切换到商品详情的组件。</p>
-        <p>这种场景往往会碰到一个问题，当我每一次从详情组件退回到列表组件的时候，列表组件会重新发出ajax请求。考虑到下面2条原因，总觉得这么不好。</p>
-        <p class="font-size-14">1.列表组件上的数据不会在短短几分钟之内就更新，完全没必要每次都发出ajax请求。这样势必降低用户体验</p>
-        <p class="font-size-14">2.浪费移动设备的流量。（如果流量无限，这条可以无视）</p>
-        <p>总之，即使只有第1条原因，我们也应该不让它每次退回到列表页的时候都重新发出ajax请求。如何解决这个问题？</p>
-        <p class="color-42B983">试试Vue.js自带的keep-alive?</p>
+<pre><code class="hlj js"><span class="hljs-keyword">import Vue from</span>'vue'
+<span class="hljs-keyword">import AsyncComputed from </span>'vue-async-computed'
+Vue.use(AsyncComputed)
+<span class="hljs-comment">/**
+  然后，在创建Vue实例(或组件)时，
+  您还可以传递名为“asyncComputed”的对象
+  或者代替标准的“计算”选项。的函数
+  传递给“asyncComputed”应该返回承诺和值
+  然后将解析为的承诺异步绑定到
+  Vue实例，当他们解决。就像普通的计算一样
+  属性，如果属性所依赖的数据发生了更改
+  然后自动重新运行该属性。
+  你几乎可以完全忽略这个事实
+  场景是异步的。要记住的一件事是
+  直到异步属性的承诺被解析为止
+  第一次，计算属性的值为null。
+*/</span>
+<span class="hljs-tag"><span class="hljs-keyword">new Vue</span></span> ({
+ <span class="hljs-tag">asyncComputed:</span> {
+  <span class="hljs-built_in">async </span><span class="hljs-keyword">someCalculation</span> () {
+    const total = this.x + this.y
+    <span class="hljs-keyword">return new Promise</span>(resolve =>
+      setTimeout(() => resolve(total), 1000)
+    )
+  }
+ }
+)}
+
+<span class="hljs-comment">/**
+ 与常规同步计算属性一样，您可以使用get方法而不是函数传递对象，
+ 但与常规计算属性不同的是，异步计算属性总是仅使用getter。
+ 如果提供的对象具有set方法，则将忽略该方法。
+ 异步计算属性也可以有一个自定义的默认值，它将被使用，直到数据是第一次加载:
+ */</span>
+ <span class="hljs-tag"><span class="hljs-keyword">new Vue</span></span> ({
+  <span class="hljs-tag">asyncComputed:</span> {
+    blogPostContent: {
+     <span class="hljs-tag">get</span> () {
+      http.get('/post/' + this.postId)
+       .then(response => response.data.postContent)
+     },
+      <span class="hljs-tag">default</span> () {
+      <span class="hljs-keyword">return Vue.</span>'Loading post ' + this.<span class="hljs-tag">postId</span>
+     },
+    }
+   }
+ )}
+</code></pre>
       </div>
     </div>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

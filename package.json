@@ -1,0 +1,20 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "代码参考地址(https://github.com/Liangyuanzhi/blogs)",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liangyuanzhi/blogs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Liangyuanzhi/blogs/issues"
+  },
+  "homepage": "https://github.com/Liangyuanzhi/blogs#readme"
+}

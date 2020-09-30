@@ -11,6 +11,43 @@
 		<link rel="stylesheet" href="css/pages45451155.css">
 		<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/1.4.0/css/bootstrap.min.css">
     <script src="js/vue.js"></script>
+    <style>
+      #display-wapper {
+        padding: 200px 5px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        margin: 50px 0;
+        width: 375px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      #display-wapper div {
+        padding: 15px 55px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+        background-color: skyblue;
+      }
+      #grid-wapper {
+        padding: 200px 5px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        margin: 50px 0;
+        width: 375px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-gap: 20px;
+      }
+      #grid-wapper div {
+        text-align: center;
+        padding: 15px 0px;
+        border-radius: 30px;
+        background-color: #4FC08D;
+      }
+    </style>
     <script>
       Vue.config.productionTip = false
       window.PAGE_TYPE = "guide"
@@ -82,13 +119,13 @@
 					<div class="list">
 						<ul class="menu-root">
               <li>
-                <a href="index.html" class="sidebar-link current">Vue中的Keep-Alive组件</a>
+                <a href="index.html" class="sidebar-link">Vue中的Keep-Alive组件</a>
               </li>
               <li>
                 <a href="async-computed.html" class="sidebar-link">异步计算属性</a>
               </li>
               <li>
-                <a href="display-flex.html" class="sidebar-link">Css布局</a>
+                <a href="display-flex.html" class="sidebar-link current">Css布局</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单1</a>
@@ -99,32 +136,32 @@
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单3</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单4</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单5</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单6</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单7</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单8</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单9</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单10</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单11</a>
               </li>
@@ -134,7 +171,7 @@
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单13</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单14</a>
               </li>
@@ -153,28 +190,28 @@
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单19</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单20</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单21</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单22</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单23</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单24</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单25</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单26</a>
               </li>
@@ -184,74 +221,111 @@
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单28</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单29</a>
               </li>
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单30</a>
               </li>
-
+              
               <li>
                 <a href="javascript:;" class="sidebar-link">菜单31</a>
               </li><li>
                 <a href="javascript:;" class="sidebar-link">菜单32</a>
               </li>
-
 						</ul>
 					</div>
 				</div>
 			</div>
 
 			<div class="content guide with-sidebar computed-guide">
-				<h2 id="背景">背景</h2>
-				<p>在我们用Vue.js做移动端开发的时候，经常会遇到这样的应用场景：</p>
-				<p>首先，让用户看到新闻列表；然后点击新闻标题，切换到新闻详情的组件，以展示新闻详情。</p>
-				<p>很多应用场景都于此类似，比如先进入商品列表，点击某一个商品条目，则切换到商品详情的组件。</p>
-				<p>这种场景往往会碰到一个问题，当我每一次从详情组件退回到列表组件的时候，列表组件会重新发出ajax请求。考虑到下面2条原因，总觉得这么不好。</p>
-				<p class="font-size-14">1.列表组件上的数据不会在短短几分钟之内就更新，完全没必要每次都发出ajax请求。这样势必降低用户体验</p>
-				<p class="font-size-14">2.浪费移动设备的流量。（如果流量无限，这条可以无视）</p>
-				<p>总之，即使只有第1条原因，我们也应该不让它每次退回到列表页的时候都重新发出ajax请求。如何解决这个问题？</p>
-				<p class="color-42B983">试试Vue.js自带的keep-alive?</p>
-
-				<h2 id="用法">用法</h2>
-				<p>是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。它使用的时候非常简单，示例代码如下：</p>
-<pre><code class="hljs html"><span class="hljs-tag">
-&lt;<span class="hljs-name">keep-alive</span>
-<span class="hljs-attr">:include</span>=<span class="hljs-string">"['componentsA,componentsB'] || 'a,b' || new Reg()"</span>
-<span class="hljs-attr">:enclude</span>=<span class="hljs-string">"['componentsA,componentsB'] || 'a,b' || new Reg()"</span>&gt;
-  <span class="hljs-comment">// 可以是任何组件</span>
-&nbsp;&nbsp;&lt;<span class="hljs-name">router-view /</span>&gt;
-&lt;<span class="hljs-name">/keep-alive</span>&gt;
-</span></code>
-</pre>
-
-<pre><code class="hljs html"><span class="hljs-tag">
-<span class="hljs-comment">// A Vue Component</span>
-&lt;<span class="hljs-name">template</span>&gt;
-&nbsp;&nbsp;&lt;<span class="hljs-name">input </span><span class="hljs-attr">type</span>=<span class="hljs-string">"input"</span> /&gt;
-&lt;<span class="hljs-name">/template</span>&gt;
-</span><span class="hljs-tag">
-&lt;<span class="hljs-name">script</span>&gt;
-<span class="hljs-keyword">export default </span><span>{</span>
- <span>name:</span> "componentsA" ,
- <span>methods:</span> <span>{</span>
-  <span class="hljs-keyword">activated</span>() <span>{</span>
-   <span class="hljs-comment">// 当保持缓存的组件激活的时候调用activated</span>
-   console.log('keep-live compoennet activated')
-  <span>},</span>
-  <span class="hljs-keyword">deactivated</span>() <span>{</span>
-    <span class="hljs-comment">// 当保持缓存的组件离开的时候调用deactivated</span>
-    console.log('keep-live compoennet deactivated')
-   <span>}</span>
- <span>}</span>
-<span>}</span>
-&lt;<span class="hljs-name">/script</span>&gt;
-</span></code>
-</pre>
-
-				<p class="color-42B983">注：当组件被exclude匹配，该组件将不会被缓存，不会调用activated 和 deactivated。</p>
-				<p class="color-42B983">使用了keep-alive就不会调用beforeDestroy(组件销毁前钩子)和destroyed(组件销毁)，因为组件没被销毁，被缓存起来了。</p>
+        <h2 id="弹性布局(flex)">弹性布局(flex)</h2>
+        <p>当时用弹性布局样式的时候,父盒子元素中的子元素等于8个的时候;就会出现如下问题;显然这样并不符合我们设计的要求 </p>
+<pre><code class="hljs css">
+<span class="hljs-keyword">#display-wapper</span> {
+  margin: 50px 0;
+  padding:200px 5px;
+  border-radius: 20px;
+  width: 375px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+<span class="hljs-keyword">#display-wapper div</span> {
+  padding: 15px 55px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  background-color: skyblue;
+}
+</code></pre>
+<pre><code class="hljs html">
+<span class="hljs-tag">&lt;div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"display-wapper"</span>&gt;
+  <span class="hljs-tag">&lt;div</span>&gt;1<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;2<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;3<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;4<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;5<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;6<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;7<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;8<span class="hljs-tag">&lt;/div&gt;</span>
+<span class="hljs-tag">&lt;/div&gt;</span>
+</code></pre>
+        <div id="display-wapper">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
+        <h2 id="宫格(grid)">宫格(grid)</h2>
+        <p>试试gird布局?</p>
+<pre><code class="hljs css">
+<span class="hljs-keyword">#grid-wapper</span> {
+  padding: 200px 5px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin: 50px 0;
+  width: 375px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  grid-gap: 20px;
+}
+<span class="hljs-keyword">#grid-wapper div</span> {
+  text-align: center;
+  padding: 15px 0px;
+  border-radius: 30px;
+  background-color: skyblue;
+}
+</code></pre>
+<pre><code class="hljs html">
+<span class="hljs-tag">&lt;div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"grid-wapper"</span>&gt;
+  <span class="hljs-tag">&lt;div</span>&gt;1<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;2<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;3<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;4<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;5<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;6<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;7<span class="hljs-tag">&lt;/div&gt;</span>
+  <span class="hljs-tag">&lt;div</span>&gt;8<span class="hljs-tag">&lt;/div&gt;</span>
+<span class="hljs-tag">&lt;/div&gt;</span>
+</code></pre>
+          <div id="grid-wapper">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
 			</div>
 		</div>
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
