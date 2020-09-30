@@ -3,6 +3,7 @@
   initMobileMenu()
   // initVideoModal()
   initNewNavLinks()
+  initSubMenu()
   // if (PAGE_TYPE) {
   //   initVersionSelect()
   //   initApiSpecLinks()
@@ -19,12 +20,25 @@
   // For these cases where a section on one page has
   // moved to a perhaps differently-named section on
   // another page, we need this.
+
+  function initSubMenu() {
+    // $('.menu-sub').each(function () {
+    //   $(this).hide()
+    // })
+
+    $('.menu-root > li > a').each(function () {
+      $(this).click(function () {
+        $(this).parent().siblings().find('.menu-sub').hide(200)
+      })
+    })
+  }
+
   function initHashLevelRedirects() {
     checkForHashRedirect(/list\.html$/, {
       key: '/v2/guide/list.html#维护状态'
     })
     checkForHashRedirect(/components\.html$/, {
-      
+
     })
     function checkForHashRedirect(pageRegex, redirects) {
       // Abort if the current page doesn't match the page regex
