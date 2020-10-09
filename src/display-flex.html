@@ -7,43 +7,94 @@
 		<title>Vue中的Keep-Alive组件</title>
     <link rel="icon" href="images/logo.png" type="image/png">
 		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/index123.css">
-		<link rel="stylesheet" href="css/pages45451155.css">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/pages.css">
 		<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/1.4.0/css/bootstrap.min.css">
     <script src="js/vue.js"></script>
     <style>
+      .text-align-center {
+        text-align: -webkit-center;
+      }
       #display-wapper {
-        padding: 200px 5px;
-        border-radius: 20px;
+        position: relative;
+        padding: 200px 15px;
+        border-radius: 25px;
         border: 1px solid #ccc;
         margin: 50px 0;
-        width: 375px;
+        width: 280px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
         flex-wrap: wrap;
+        box-sizing: border-box;
       }
       #display-wapper div {
-        padding: 15px 55px;
+        padding: 5px 30px;
         border-radius: 30px;
         margin-bottom: 20px;
         background-color: skyblue;
       }
+      #display-wapper::after{
+        position: absolute;
+        bottom: 20px;
+        content: "";
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #display-wapper::before{
+        position: absolute;
+        top: 10px;
+        content: "";
+        width: 55px;
+        height: 3px;
+        border-radius: 15px;
+        border: 2px solid #000;
+        left: 50%;
+        transform: translateX(-50%);
+      }
       #grid-wapper {
-        padding: 200px 5px;
-        border-radius: 20px;
+        position: relative;
+        padding: 200px 15px;
+        width: 280px;
+        box-sizing: border-box;
+        border-radius: 25px;
         border: 1px solid #ccc;
         margin: 50px 0;
-        width: 375px;
         display: grid;
         grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto;
-        grid-gap: 20px;
+        grid-template-rows: 30px 30px 30px;
+        grid-gap: 15px 20px;
+      }
+      #grid-wapper::after{
+        position: absolute;
+        bottom: 20px;
+        content: "";
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      #grid-wapper::before{
+        position: absolute;
+        top: 10px;
+        content: "";
+        width: 55px;
+        height: 3px;
+        border-radius: 15px;
+        border: 2px solid #000;
+        left: 50%;
+        transform: translateX(-50%);
       }
       #grid-wapper div {
         text-align: center;
-        padding: 15px 0px;
+        padding: 8px 0px;
         border-radius: 30px;
         background-color: #4FC08D;
       }
@@ -119,120 +170,13 @@
 					<div class="list">
 						<ul class="menu-root">
               <li>
-                <a href="index.html" class="sidebar-link">Vue中的Keep-Alive组件</a>
+                <a href="index.html" class="sidebar-link">Vue中的Keep-Alive</a>
               </li>
               <li>
                 <a href="async-computed.html" class="sidebar-link">异步计算属性</a>
               </li>
               <li>
                 <a href="display-flex.html" class="sidebar-link current">Css布局</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单1</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单2</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单3</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单4</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单5</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单6</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单7</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单8</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单9</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单10</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单11</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单12</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单13</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单14</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单15</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单16</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单17</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单18</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单19</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单20</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单21</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单22</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单23</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单24</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单25</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单26</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单27</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单28</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单29</a>
-              </li>
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单30</a>
-              </li>
-              
-              <li>
-                <a href="javascript:;" class="sidebar-link">菜单31</a>
-              </li><li>
-                <a href="javascript:;" class="sidebar-link">菜单32</a>
               </li>
 						</ul>
 					</div>
@@ -242,12 +186,18 @@
 			<div class="content guide with-sidebar computed-guide">
         <h2 id="弹性布局(flex)">弹性布局(flex)</h2>
         <p>当时用弹性布局样式的时候,父盒子元素中的子元素等于8个的时候;就会出现如下问题;显然这样并不符合我们设计的要求 </p>
+				<p>它之所以被称为 Flexbox ，是因为它能够扩展和收缩 flex 容器内的元素，以最大限度地填充可用空间。与以前布局方式（如 table 布局和浮动元素内嵌块元素）相比，Flexbox 是一个更强大的方式：</p>
+        <ul>
+        	<li>在不同方向排列元素</li>
+        	<li>重新排列元素的显示顺序</li>
+        	<li>更改元素的对齐方式</li>
+        	<li>动态地将元素装入容器</li>
+        </ul>
 <pre><code class="hljs css">
 <span class="hljs-keyword">#display-wapper</span> {
   margin: 50px 0;
   padding:200px 5px;
   border-radius: 20px;
-  width: 375px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -255,7 +205,7 @@
   flex-wrap: wrap;
 }
 <span class="hljs-keyword">#display-wapper div</span> {
-  padding: 15px 55px;
+  padding: 5px 30px;
   border-radius: 30px;
   margin-bottom: 20px;
   background-color: skyblue;
@@ -273,49 +223,77 @@
   <span class="hljs-tag">&lt;div</span>&gt;8<span class="hljs-tag">&lt;/div&gt;</span>
 <span class="hljs-tag">&lt;/div&gt;</span>
 </code></pre>
-        <div id="display-wapper">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
+
+        <div class="text-align-center">
+          <div id="display-wapper">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
         </div>
+        <h3 id="容器属性">容器属性</h3>
+        <h4 id="flex-direction:">flex-direction:</h4>
+        <ul>
+        	<li>row（默认值）：主轴为水平方向，起点在左端。</li>
+        	<li>row-reverse：主轴为水平方向，起点在右端。</li>
+        	<li>column：主轴为垂直方向，起点在上沿。</li>
+        	<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
+        </ul>
+        <h4 id="flex-wrap:">flex-wrap:</h4>
+        <ul>
+        	<li>nowrap（默认）：不换行。</li>
+        	<li>wrap：换行，第一行在上方。</li>
+        	<li>wrap-reverse：换行，第一行在下方。</li>
+        </ul>
+        <h4 id="justify-content:">justify-content:</h4>
+        <ul>
+        	<li>flex-start（默认值）：左对齐</li>
+        	<li>flex-end：右对齐</li>
+        	<li>center： 居中</li>
+        	<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+        	<li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+        </ul>
+        <h4 id="align-items:">align-items:</h4>
+        <ul>
+        	<li>flex-start：交叉轴的起点对齐。</li>
+        	<li>flex-end：交叉轴的终点对齐。</li>
+        	<li>center：交叉轴的中点对齐。</li>
+        	<li>baseline: 项目的第一行文字的基线对齐。</li>
+        	<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+        </ul>
         <h2 id="宫格(grid)">宫格(grid)</h2>
         <p>试试gird布局?</p>
+        <p>grid-template-columns：100px  100px  100px;</p>
+        <p class="font-size-12">* 总共三列，每列列宽是100px；除了使用像素，还可以使用百分比；</p>
+        <p>grid-template-rows：100px  100px  100px;</p>
+        <p class="font-size-12"> * 从上至下，每行高度为100px；除了使用像素，还可以使用百分比或者auto自适应</p>
+        <p>repeat写法：</p>
+        <p>grid-template-columns：repeat(3,100px);</p>
+        <p>grid-template-rows：repeat(3,100px);</p>
 <pre><code class="hljs css">
 <span class="hljs-keyword">#grid-wapper</span> {
   padding: 200px 5px;
   border-radius: 20px;
   border: 1px solid #ccc;
   margin: 50px 0;
-  width: 375px;
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 30px 30px 30px;
   grid-gap: 20px;
 }
 <span class="hljs-keyword">#grid-wapper div</span> {
   text-align: center;
-  padding: 15px 0px;
+  padding: 8px 0px;
   border-radius: 30px;
   background-color: skyblue;
 }
 </code></pre>
-<pre><code class="hljs html">
-<span class="hljs-tag">&lt;div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"grid-wapper"</span>&gt;
-  <span class="hljs-tag">&lt;div</span>&gt;1<span class="hljs-tag">&lt;/div&gt;</span>
-  <span class="hljs-tag">&lt;div</span>&gt;2<span class="hljs-tag">&lt;/div&gt;</span>
-  <span class="hljs-tag">&lt;div</span>&gt;3<span class="hljs-tag">&lt;/div&gt;</span>
-  <span class="hljs-tag">&lt;div</span>&gt;4<span class="hljs-tag">&lt;/div&gt;</span>
-  <span class="hljs-tag">&lt;div</span>&gt;5<span class="hljs-tag">&lt;/div&gt;</span>
-  <span class="hljs-tag">&lt;div</span>&gt;6<span class="hljs-tag">&lt;/div&gt;</span>
-  <span class="hljs-tag">&lt;div</span>&gt;7<span class="hljs-tag">&lt;/div&gt;</span>
-  <span class="hljs-tag">&lt;div</span>&gt;8<span class="hljs-tag">&lt;/div&gt;</span>
-<span class="hljs-tag">&lt;/div&gt;</span>
-</code></pre>
+        <div class="text-align-center">
           <div id="grid-wapper">
             <div>1</div>
             <div>2</div>
@@ -326,6 +304,8 @@
             <div>7</div>
             <div>8</div>
           </div>
+        </div>
+
 			</div>
 		</div>
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
